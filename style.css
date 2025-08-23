@@ -28,6 +28,7 @@ noscript {
     background-color: var(--color-dark-mode)
 }
 
+
 .main,
 body {
     overflow-x: hidden
@@ -36,6 +37,39 @@ body {
 #backtotopbutton article,
 :root {
     font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif
+}
+
+#name {
+  display: flex;
+  flex-direction: row; /* Horizontal di desktop */
+  align-items: flex-start;
+  gap: 20px; /* Jarak antara "Bintang" dan "Kurniawan" */
+}
+
+#name .firstname,
+#name .lastname {
+  display: flex; /* Tetap inline dalam satu div */
+  align-items: center;
+}
+
+/* Mobile: pecah menjadi 2 baris */
+@media (max-width: 768px) {
+  #name {
+    flex-direction: column; /* Vertikal di mobile */
+    align-items: flex-start;
+    gap: 0; /* Hilangkan gap di mobile */
+  }
+  
+  #name .lastname {
+    margin-top: -10px; /* Jarak antar baris di mobile */
+  }
+}
+
+/* Untuk layar tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
+  #name {
+    gap: 15px; /* Gap sedikit lebih kecil di tablet */
+  }
 }
 
 .eye,
@@ -84,6 +118,28 @@ html {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased
 }
+
+#home {
+    margin-top: 80px; /* sesuaikan dengan tinggi header/navbar */
+  }
+  
+@media (max-width: 998px) {
+  #home {
+    margin-top: 50px; /* dari 80px jadi 50px */
+  }
+}
+
+@media (max-width: 768px) {
+  #home {
+    margin-top: 40px; /* dari 80px jadi 40px */
+  }
+}
+
+@media (max-width: 500px) {
+  #home {
+    margin-top: 30px; /* dari 80px jadi 30px */
+  }
+}  
 
 :root {
     cursor: default;
